@@ -16,9 +16,7 @@
     "default_title": "My Extension",
     "default_popup": "popup.html"
   },
-  "permissions": [
-    "storage"
-  ],
+
   "content_scripts": [
     {
       "matches": [
@@ -29,5 +27,22 @@
         "contentScript.js"
       ]
     }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "interceptor.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "permissions": [
+    "storage",
+    "tabs",
+    "webRequest",
+    "activeTab",
+    "unlimitedStorage"
   ]
 }
